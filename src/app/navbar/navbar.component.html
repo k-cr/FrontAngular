@@ -1,1 +1,43 @@
-<p>navbar works!</p>
+<!-- Nav bar -->
+<nav class="navbar navbar-light bg-dark" id="navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white">Argentina Programa</a>
+      
+      <div class="d-flex">
+        <button class="btn btn-outline-success text-white" data-bs-toggle="modal" data-bs-target="#LogIn">Iniciar sesión</button>
+      </div>
+    </div>
+  </nav>
+  <!-- End navbar -->
+  <!-- Modal -->
+    <div class="modal fade" id="LogIn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form1Example1" class="form-control" />
+                <label class="form-label" for="form1Example1">Email</label>
+              </div>
+            
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form1Example2" class="form-control" />
+                <label class="form-label" for="form1Example2">Contraseña</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary ms-2">Iniciar sesión</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  

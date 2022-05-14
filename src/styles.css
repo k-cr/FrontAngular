@@ -1,1 +1,381 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --color-primary: #3a6cf4;
+    --color-secondary: #4e9eff;
+    --color-lightblue: #235bf6;
+    --color-alternative: #f0f0f0;
+/* =============== Basic =========== */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+section {
+    border-radius: 2px;
+    border-color: #000;
+    border-style: 2px solid;
+    width: 85%;
+    padding: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    background-color: #f8f8f8;
+    min-height: 110vh;
+}
+
+.mat-card {
+    border-radius: 10px 10px 10px 10px;
+    margin: 10px 10px;
+    padding: 3px;
+    width: 90%;
+}
+
+.content-title {
+    font-size: 1.7em;
+    font-weight: 800;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section-title {
+    position: relative;
+    color: var(--color-primary);
+    font-size: 2.2em;
+    font-weight: 800;
+    margin-bottom: 60px;
+}
+
+.section-title:before {
+    content: '';
+    position: absolute;
+    top: 56px;
+    left: 50%;
+    width: 140px;
+    height: 4px;
+    background-color: var(--color-primary);
+    transform: translateX(-50%);
+}
+
+.section-title:after {
+    content: ' ';
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    transform: translateX(-50%);
+}
+
+.title-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =============== NavBar =========== */
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+#navbar {
+    padding: 10px;
+}
+
+/* =============== Main =========== */
+
+.profile-cover {
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+}
+
+#info-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile-pfp {
+    border-radius: 50%;
+    width: 152px;
+    height: 152px;
+    margin-left: -10px;
+    margin-top: -110px;
+    z-index: 1;
+    box-shadow: 0px 5px 0px rgba(81, 71, 139, 0.171);
+}
+
+#info-action {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#info-details ul {
+    list-style: none;
+}
+
+#info-details li a {
+    color: black;
+    text-decoration: none;
+}
+
+#info-details li a img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+#info-details li a h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    align-self: center;
+}
+
+#profile-pfpEdit {
+    justify-content: space-between;
+}
+
+.profile-details {
+    padding: 2.5rem;
+}
+
+/* =============== About =========== */
+
+#about {
+    padding: 2.5rem;
+}
+
+/* =============== Education / Experience =========== */
+
+#experience {
+    padding: 2.5rem;
+}
+
+.education {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.experience {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.timeline {
+    padding: 1.9rem 0.95rem;
+    border-radius: 16px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline .timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 1.9rem;
+}
+
+.timeline .timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline .timeline-item:before {
+    content: " ";
+    width: 2px;
+    position: absolute;
+    height: 100%;
+    left: 0.5rem;
+    background-color: var(--color-primary);
+    top: 0;
+}
+
+.timeline .timeline-icon {
+    position: absolute;
+    left: -0.25rem;
+    top: 0;
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: var(--color-primary);
+}
+
+.timeline .timeline-date {
+    font-size: 12px;
+    color: gray;
+}
+
+/* =============== Skills =========== */
+
+#skills {
+    padding: 2.5rem;
+}
+
+.skills .content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.skills .content .col-left {
+    position: relative;
+    width: 46%;
+}
+
+.skills .content .col-right {
+    position: relative;
+    width: 46%;
+}
+
+/*
+.skills .content .col-right .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.skills .content .col-right .bar .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.skills .content .col-right .bar .info span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.skills .content .col-right .bar .line {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 2px;
+}
+*/
+/* =============== Proyects =========== */
+.example-card {
+    max-width: 400px;
+  }
+  
+#projects {
+    padding: 2.5rem;
+}
+
+.project .content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.project .content .card {
+    width: 350px;
+    margin: 15px;
+    border-radius: 6px;
+}
+
+.project .content .card .card-img {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project .content .card .card-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.5s ease;
+}
+
+.project .content .card .card-img img:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 411px) {
+    .pd-right button:nth-child(1),
+    .pd-right button:nth-child(2) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #info-details {
+        display: none;
+    }
+
+    .profile-details {
+        flex-direction: column;
+    }
+    
+    .pd-row div img {
+        display: none;
+    }
+}
+
+@media (max-width: 1040px) {
+    section {
+        padding: 80px 20px;
+    }
+
+    .about .content {
+        flex-direction: column;
+    }
+
+    .about .content .column {
+        position: relative;
+        width: 100%;
+    }
+
+    .about .content .col-right {
+        margin-top: 40px;
+    }
+
+    .education,
+    .experience {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .skills .content {
+        flex-direction: column;
+    }
+
+    .skills .content .column {
+        position: relative;
+        width: 100%;
+    }
+
+    .skills .content .col-right {
+        margin-top: 40px;
+    }
+}
+/*html, body { height: 100%; }*/
+
+/*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/

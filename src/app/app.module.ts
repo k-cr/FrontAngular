@@ -25,7 +25,7 @@ import { PersonComponent } from './person/person.component';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

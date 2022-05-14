@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { PersonComponent } from './person/person.component';
 
-const routes: Routes = [
+const routes: Routes = [/*
   { path: '', component: PersonComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'}
+  {path: '**', redirectTo: '', pathMatch: 'full'}*/
 ];
 
 @NgModule({

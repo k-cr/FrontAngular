@@ -30,7 +30,7 @@ export class PersonComponent implements OnInit {
   }
 
   listPerson(): void {
-    this.PersonService.getAll().subscribe(
+    this.PersonService.getPersons().subscribe(
       data => {
         this.persons = data;
       },

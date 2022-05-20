@@ -9,7 +9,7 @@ import { JwtDto } from '../models/jwt-dto';
   providedIn: 'root'
 })
 export class AuthService {
-  authUrl = 'https://portfoliocristianramos.herokuapp.com/api/auth'
+  authUrl = 'https://portfoliocristianramos.herokuapp.com/api/auth/'
   constructor(private httpClient: HttpClient) { }
 
   public newUser(newUser: NewUser): Observable<any> {

@@ -27,4 +27,8 @@ export class ExperienceService {
   public deleteExperience(id: number): Observable<any>{
     return this.http.delete<any>(this.expURL + `delete/${id}`);
   }
+
+  public detailExperience(id: number): Observable<Experience>{
+    return this.http.get<Experience>(this.expURL + `detail/${id}`);
+  }
 }

@@ -27,4 +27,8 @@ export class EducationService {
   public deleteEducation(id: number): Observable<any>{
     return this.http.delete<any>(this.eduURL + `delete/${id}`);
   }
+
+  public detailEducation(id: number): Observable<Education> {
+    return this.http.get<Education>(this.eduURL + `detail/${id}`);
+  }
 }

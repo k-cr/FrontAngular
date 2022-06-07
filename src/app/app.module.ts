@@ -6,7 +6,7 @@ import { APP_BASE_HREF } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Módulos del proyecto
 
@@ -28,7 +28,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonInterceptorService } from './interceptors/person-interceptor.service';
-
+import { NewEduComponent } from './edu-exp/new-edu/new-edu.component';
+import { NewExpComponent } from './edu-exp/new-exp/new-exp.component';
+import { EditExpComponent } from './edu-exp/edit-exp/edit-exp.component';
+import { EditEduComponent } from './edu-exp/edit-edu/edit-edu.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,11 @@ import { PersonInterceptorService } from './interceptors/person-interceptor.serv
     AboutmeComponent,
     EduExpComponent,
     SkillsComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    NewEduComponent,
+    NewExpComponent,
+    EditExpComponent,
+    EditEduComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,8 @@ import { PersonInterceptorService } from './interceptors/person-interceptor.serv
     MatProgressBarModule,
     MatCardModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [PersonInterceptorService],
   bootstrap: [AppComponent]

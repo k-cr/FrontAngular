@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="col-md-6 form-group">
+                    <label for="startDate">Fecha de inicio</label>
+                    <input type="date" class="form-control" id="startDate" name="startDate"
+                    [(ngModel)]="startDate" required>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="finishDate">Fecha de Finalización</label>
+                    <input type="date" class="form-control" id="finishDate" name="finishDate"
+                    [(ngModel)]="finishDate" required>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="degree">Grado alcanzado</label>
+                    <input type="text" class="form-control" id="degree" name="degree"
+                    [(ngModel)]="degree" required>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="otherInformation">Información extra</label>
+                    <input type="text" class="form-control" id="otherInformation" name="otherInformation"
+                    [(ngModel)]="otherInformation" required>
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                    <i class="fas fa-plus-circle"></i> Crear</button>
+                <button class="btn btn-outline-primary btn-block" routerLink="/home">
+                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

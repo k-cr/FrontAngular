@@ -35,24 +35,18 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.loginUser = new LoginUser(this.username!, this.password!);
-    this.authService.login(this.loginUser).subscribe(
-      data => {
-        this.isLogged = true;
-        this.isLoginFail = false;
-
-        this.tokenService.setToken(data.token!);
-        this.tokenService.setUsername(data.username!);
-        this.tokenService.setAuthorities(data.authorities!);
-        this.roles = data.authorities!;
-        this.router.navigate(['/home']);
-      },
-      err => {
-        this.isLogged = false;
-        this.isLoginFail = true;
-        this.errMsj = err.error.mensaje;
+        if(this.username == 'ramoscristian' && this.password == 'k_cr2704'){
+          this.router.navigate(['/home'])
+          this.isLogged = true;
+          this.isLoginFail = false;
+        }
+        else {
+          window.location.reload();
       }
-    )
+  }
+
+  irHome(page: string) {
+    this.router.navigate([`${page}`]);
   }
 }
 

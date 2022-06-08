@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Education } from 'src/app/models/education';
 import { EducationService } from 'src/app/service/education.service';
+import Alerta from 'sweetalert2';
 
 @Component({
   selector: 'app-new-edu',
@@ -26,9 +27,11 @@ export class NewEduComponent implements OnInit {
   onCreate(): void {
     const education = new Education(this.startDate, this.finishDate, this.degree, this.otherInformation)
     this.education.addEducation(education).subscribe(
-      data => {console.log("Agregado");}
+      data => {console.log("Agregado");
+      Alerta.fire('Agregago', 'Agregado correctamente', 'success')
+      this.router.navigate(['/home'])}
+
     )
-    window.location.reload();
   }
 
 }

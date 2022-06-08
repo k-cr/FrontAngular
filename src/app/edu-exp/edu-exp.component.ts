@@ -65,6 +65,7 @@ export class EduExpComponent implements OnInit {
   deleteEdu(id: number) {
     this.eduService.deleteEducation(id).subscribe(data => {
       console.log(data);
+      window.location.reload();
     });
   }
 
@@ -77,6 +78,14 @@ export class EduExpComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  editarEducacion(id: number) {
+    this.router.navigate(['home/editarEducacion', id])
+  }
+
+  editarExperiencia(id: number) {
+    this.router.navigate(['home/editarExperiencia', id])
   }
 
 }

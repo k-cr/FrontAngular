@@ -1,32 +1,35 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="row mt-5">
-        <div class="col-md-4 mx-auto">
+    <div class="row mt-3 border bg-white rounded-3">
+        <h2 class="p-2 m-4"><i class="timeline-icon fa-solid fa-graduation-cap m-2"></i>Añadir educación</h2>
+        <div class="col-md-8 mx-auto">
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="col-md-6 form-group">
-                    <label for="startDate">Fecha de inicio</label>
-                    <input type="date" class="form-control" id="startDate" name="startDate"
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="startDate" class="mb-2"><b>Fecha de inicio</b></label>
+                    <input type="text" placeholder="DD/MM/AAAA" class="form-control" id="startDate" name="startDate"
                     [(ngModel)]="startDate" required>
                 </div>
-                <div class="col-md-6 form-group">
-                    <label for="finishDate">Fecha de Finalización</label>
-                    <input type="date" class="form-control" id="finishDate" name="finishDate"
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="finishDate" class="mb-2"><b>Fecha de Finalización</b></label>
+                    <input type="text" placeholder="DD/MM/AAAA" class="form-control" id="finishDate" name="finishDate"
                     [(ngModel)]="finishDate" required>
                 </div>
-                <div class="col-md-12 form-group">
-                    <label for="degree">Grado alcanzado</label>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="degree" class="mb-2"><b>Grado alcanzado</b></label>
                     <input type="text" class="form-control" id="degree" name="degree"
                     [(ngModel)]="degree" required>
                 </div>
-                <div class="col-md-12 form-group">
-                    <label for="otherInformation">Información extra</label>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="otherInformation" class="mb-2"><b>Información extra</b></label>
                     <input type="text" class="form-control" id="otherInformation" name="otherInformation"
                     [(ngModel)]="otherInformation" required>
                 </div>
-                <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
-                    <i class="fas fa-plus-circle"></i> Crear</button>
-                <button class="btn btn-outline-primary btn-block" routerLink="/home">
-                    <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                        <i class="fas fa-plus-circle"></i> Crear</button>
+                    <button class="btn btn-outline-primary btn-block m-2 " routerLink="/home">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
             </form>
         </div>
     </div>

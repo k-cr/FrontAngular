@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Aboutme } from '../models/aboutme';
 import { AboutmeService } from '../service/aboutme.service';
 import { TokenService } from '../service/token.service';
@@ -15,7 +16,8 @@ export class AboutmeComponent implements OnInit {
   isAdmin = false;
 
   constructor(private AboutmeService: AboutmeService,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private router: Router,) { }
 
   ngOnInit(): void {
     this.listAbout();
@@ -36,6 +38,10 @@ export class AboutmeComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  editarAbout(id: number) {
+    this.router.navigate(['home/editar', id])
   }
 
 }

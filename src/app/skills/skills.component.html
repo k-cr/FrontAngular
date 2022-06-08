@@ -6,22 +6,22 @@
       <div class="content">
           <div class="column col-left" *ngFor="let soft of softskills">
               <div class="title-button">
-                  <h4>Pequeño resumen de las habilidades</h4>
-                  <i class="fa-solid fa-edit" data-bs-toggle="modal" data-bs-target="#editSkillsSummary"></i>
+                  <h4>Resumen de las softskills</h4>
+                  <i class="fa-solid fa-edit"></i>
               </div>
               <p>{{soft.information}}</p>
           </div>
           <div class="column col-right">
               <div class="title-button">
                   <h4>HardSkills</h4>
-                  <i class="fa-solid fa-plus"  data-bs-toggle="modal" data-bs-target="#addHardSkill"></i>
+                  <i class="fa-solid fa-plus"></i>
                 </div>
               <li *ngFor="let hardskill of hardskills">
                   <div class="title-button">
                       <h5>{{hardskill.name}}</h5>
                       <div class="d-block">
-                        <span style="padding-right: 5px;"><i class="fa-solid fa-edit" data-bs-toggle="modal" data-bs-target="#editHardSkill"></i></span>
-                        <span style="padding-right: 5px;"><i class="fa-solid fa-trash" data-bs-toggle="modal" data-bs-target="#eliminar"></i></span>
+                        <span style="padding-right: 5px;"><i class="fa-solid fa-edit"></i></span>
+                        <span style="padding-right: 5px;"><i class="fa-solid fa-trash"></i></span>
                       </div>
                   </div>
                   <mat-progress-bar class="mb-2" [color]="color" [mode]="mode" [value]="hardskill.level" [bufferValue]="bufferValue" style="height:12px; border-radius: 4px;"></mat-progress-bar>
@@ -29,103 +29,3 @@
           </div>
       </div>
   </section>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="editSkillsSummary" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Editar resumen de las habilidades</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Pon una descripción de tus habilidades</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="editHardSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Modificar hardskill</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="nameImput" class="form-label">Nombre</label>
-              <input class="form-control" type="text" placeholder="Ejemplo: HTML, CSS"
-                aria-label="Ejemplo: HTML, CSS">
-            </div>
-            <div class="mb-3">
-              <label for="nameImput" class="form-label">Nivel que piensa que tiene</label>
-              <input class="form-control" type="text" placeholder="Ejemplo: 50, 90..."
-                aria-label="Ejemplo: 50, 90...">
-            </div>
-            <br>
-            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary ms-2">Guardar cambios</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="modal fade" id="addHardSkill" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Añadir hardskill</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="nameImput" class="form-label">Nombre</label>
-              <input class="form-control" type="text" placeholder="Ejemplo: HTML, CSS"
-                aria-label="Ejemplo: HTML, CSS">
-            </div>
-            <div class="mb-3">
-              <label for="nameImput" class="form-label">Nivel que piensa que tiene</label>
-              <input class="form-control" type="text" placeholder="Ejemplo: 50, 90..."
-                aria-label="Ejemplo: 50, 90...">
-            </div>
-            <br>
-            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary ms-2">Guardar cambios</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Eliminar elemento</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          ¿Seguro que querés eliminar este elemento?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Eliminar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- END Skills-->

@@ -23,6 +23,10 @@ export class PersonService {
   public editPerson(id: number, person: Person): Observable<any>{
     return this.httpClient.put<any>(this.personURL + `edit/${id}`, person);
   }
+  
+  public detailPerson(id: number): Observable<Person>{
+    return this.httpClient.get<Person>(this.personURL + `detail/${id}`);
+  }
 
   public deletePerson(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.personURL + `delete/${id}`);

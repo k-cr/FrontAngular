@@ -20,11 +20,15 @@ export class AboutmeService {
     return this.httpClient.post<any>(this.aboutURL + 'new', about);
   }
 
-  public editAbout(id: number, about: Aboutme): Observable<any>{
-    return this.httpClient.put<any>(this.aboutURL + `edit/${id}`, about);
+  public editAbout(about: Aboutme): Observable<any>{
+    return this.httpClient.put<any>(this.aboutURL + `edit/1`, about);
   }
 
   public deleteAbout(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.aboutURL + `delete/${id}`);
+  }  
+  
+  public detailAbout(id: number): Observable<Aboutme>{
+    return this.httpClient.get<Aboutme>(this.aboutURL + `detail/${id}`);
   }
 }

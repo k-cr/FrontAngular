@@ -1,12 +1,11 @@
 <!-- Home section -->
-
 <div class="card mat-card mx-auto" id="card-about" *ngFor="let person of persons">
     <img class="profile-cover" src="{{person.url_banner}}" alt="Card image cap">
     <div class="profile-details">
       <div class="info-about">
         <div class="img-about mb-3" id="profile-pfpEdit">
           <img src="{{person.url_pfp}}" id="profile-pfp">
-          <i class="fa-solid fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#editProfile"></i>
+          <i class="fa-solid fa-pen-to-square" (click)="editarPerson(person.id!)"></i>
         </div>
   
         <div class="mb-3" id="info-data">
@@ -27,52 +26,3 @@
       </div>
     </div>
   </div>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="editProfile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Editar perfil</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Nombre y apellido</label>
-            <input class="form-control" type="text" placeholder="Escriba su nombre y apellido"
-              aria-label="Escriba su nombre y apellido">
-          </div>
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Ocupación</label>
-            <input class="form-control" type="text" placeholder="Ejemplo: Estudiante, Programador en Google."
-              aria-label="Ejemplo: Estudiante, Programador en Google.">
-          </div>
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Institución relacionada</label>
-            <input class="form-control" type="text" placeholder="Ejemplo: Universidad Nacional de Buenos Aires"
-              aria-label="Ejemplo: Universidad Nacional de Buenos Aires">
-          </div>
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Foto de perfil</label>
-            <input class="form-control" type="text" placeholder="URL Foto de Perfil"
-              aria-label="URL Foto de Perfil">
-          </div>
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Foto de la institución relacionada</label>
-            <input class="form-control" type="text" placeholder="URL foto institución"
-              aria-label="URL foto institución">
-          </div>
-          <div class="mb-3">
-            <label for="nameImput" class="form-label">Foto de portada</label>
-            <input class="form-control" type="text" placeholder="URL foto de portada"
-              aria-label="URL foto de portada">
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  

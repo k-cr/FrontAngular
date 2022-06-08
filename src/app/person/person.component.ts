@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from '../models/person';
 import { PersonService } from '../service/person.service';
 import { TokenService } from '../service/token.service';
@@ -11,22 +12,14 @@ import { TokenService } from '../service/token.service';
 export class PersonComponent implements OnInit {
 
   persons: Person[] = [];
-  roles?: string[];
-  isAdmin = false;
 
   constructor(
     private PersonService: PersonService,
-    private tokenService: TokenService
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.listPerson();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(role => {
-      if(role === 'ROLE_ADMIN'){
-        this.isAdmin = true;
-      }
-    })
   }
 
   listPerson(): void {
@@ -38,6 +31,10 @@ export class PersonComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  editarPerson(id: number) {
+    this.router.navigate(['home/editarPerson', id])
   }
 
 }

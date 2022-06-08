@@ -32,6 +32,11 @@ import { NewEduComponent } from './edu-exp/new-edu/new-edu.component';
 import { NewExpComponent } from './edu-exp/new-exp/new-exp.component';
 import { EditExpComponent } from './edu-exp/edit-exp/edit-exp.component';
 import { EditEduComponent } from './edu-exp/edit-edu/edit-edu.component';
+import { EditAboutComponent } from './aboutme/edit-about/edit-about.component';
+import { EditarPersonComponent } from './person/editar-person/editar-person.component';
+import { EditSoftComponent } from './skills/edit-soft/edit-soft.component';
+import { EditHardComponent } from './skills/edit-hard/edit-hard.component';
+import { NuevaHardComponent } from './skills/nueva-hard/nueva-hard.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +53,11 @@ import { EditEduComponent } from './edu-exp/edit-edu/edit-edu.component';
     NewExpComponent,
     EditExpComponent,
     EditEduComponent,
+    EditAboutComponent,
+    EditarPersonComponent,
+    EditSoftComponent,
+    EditHardComponent,
+    NuevaHardComponent,
   ],
   imports: [
     BrowserModule,

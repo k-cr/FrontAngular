@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<div class="container" *ngIf="person">
+    <div class="row mt-3 border bg-white rounded-3">
+        <h2 class="p-2 m-4"><i class="fa-solid fa-pen-to-square"></i>Editar perfil</h2>
+        <div class="col-md-8 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="fullname" class="mb-2"><b>Nombre completo</b></label>
+                    <input type="text" class="form-control" id="fullname" name="fullname"
+                    [(ngModel)]="person.fullname" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="ocupation" class="mb-2"><b>Ocupación</b></label>
+                    <input type="text" class="form-control" id="ocupation" name="ocupation"
+                    [(ngModel)]="person.ocupation" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="intitution" class="mb-2"><b>Nombre de la institución</b></label>
+                    <input type="text" class="form-control" id="intitution" name="intitution"
+                    [(ngModel)]="person.intitution" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="url_institution" class="mb-2"><b>URL de foto de la institución</b></label>
+                    <input type="text" class="form-control" id="url_institution" name="url_institution"
+                    [(ngModel)]="person.url_institution" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="url_pfp" class="mb-2"><b>URL de foto de perfil</b></label>
+                    <input type="text" class="form-control" id="url_pfp" name="url_pfp"
+                    [(ngModel)]="person.url_pfp" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <label for="url_banner" class="mb-2"><b>URL de foto de portada</b></label>
+                    <input type="text" class="form-control" id="url_banner" name="url_banner"
+                    [(ngModel)]="person.url_banner" required>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2 ">
+                    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                        <i class="fas fa-plus-circle"></i>Editar</button>
+                    <button class="btn btn-outline-primary btn-block m-2 " routerLink="/home">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

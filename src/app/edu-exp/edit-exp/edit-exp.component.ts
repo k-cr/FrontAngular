@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Education } from 'src/app/models/education';
-import { EducationService } from 'src/app/service/education.service';
+import { Experience } from 'src/app/models/experience';
+import { ExperienceService } from 'src/app/service/experience.service';
 import Alerta from 'sweetalert2';
 
 @Component({
@@ -12,19 +12,19 @@ import Alerta from 'sweetalert2';
 export class EditExpComponent implements OnInit {
 
   id?: number;
-  education!: Education;
+  experience!: Experience;
 
   constructor(
-    private educationService: EducationService,
+    private experienceService: ExperienceService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
-    this.educationService.getById(this.id!).subscribe(
+    this.experienceService.detailExperience(this.id!).subscribe(
       data => {
-        this.education = data;
+        this.experience = data;
       },
       err => {
         console.log(err)
@@ -33,7 +33,7 @@ export class EditExpComponent implements OnInit {
   }
 
   onUpdate(): void {
-    this.educationService.editEducation(this.id!, this.education!).subscribe(
+    this.experienceService.editExperience(this.id!, this.experience!).subscribe(
       data => {
         console.log("Editado")
         this.router.navigate(['/home']);

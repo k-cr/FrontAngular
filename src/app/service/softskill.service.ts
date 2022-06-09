@@ -27,4 +27,8 @@ export class SoftskillService {
   public deleteSoftskill(id: number): Observable<any>{
     return this.http.delete<any>(this.softURL + `delete/${id}`);
   }
+
+  public detailSoftskill(id: number): Observable<Softskill>{
+    return this.http.get<Softskill>(this.softURL + `detail/${id}`);
+  }
 }

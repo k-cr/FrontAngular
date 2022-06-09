@@ -9,6 +9,11 @@ import { NewExpComponent } from './edu-exp/new-exp/new-exp.component';
 import { IndexComponent } from './index/index.component';
 import { EditarPersonComponent } from './person/editar-person/editar-person.component';
 import { PersonComponent } from './person/person.component';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
+import { NewProjectComponent } from './projects/new-project/new-project.component';
+import { EditHardComponent } from './skills/edit-hard/edit-hard.component';
+import { EditSoftComponent } from './skills/edit-soft/edit-soft.component';
+import { NuevaHardComponent } from './skills/nueva-hard/nueva-hard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -23,8 +28,15 @@ const routes: Routes = [
 
   { path: 'home/nuevaExperiencia', component: NewExpComponent},
   { path: 'home/editarExperiencia/:id', component: EditExpComponent},
+
+  { path: 'home/editarSoftskill/:id', component: EditSoftComponent},
+  { path: 'home/editarHardskill/:id', component: EditHardComponent},
+  { path: 'home/nuevaHardskill', component: NuevaHardComponent},
   
-  { path: '', redirectTo: '/login', pathMatch: 'full'}
+  { path: 'home/nuevoProyecto', component: NewProjectComponent},
+  { path: 'home/editarProyecto/:id', component: EditProjectComponent},
+
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
 ];
 
 @NgModule({

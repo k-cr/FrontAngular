@@ -7,21 +7,21 @@
           <div class="column col-left" *ngFor="let soft of softskills">
               <div class="title-button">
                   <h4>Resumen de las softskills</h4>
-                  <i class="fa-solid fa-edit"></i>
+                  <i class="fa-solid fa-edit" routerLink="editarSoftskill/{{soft.id}}"></i>
               </div>
-              <p>{{soft.information}}</p>
+              <p style="font-size: 18px">{{soft.information}}</p>
           </div>
           <div class="column col-right">
               <div class="title-button">
                   <h4>HardSkills</h4>
-                  <i class="fa-solid fa-plus"></i>
+                  <i class="fa-solid fa-plus" routerLink="nuevaHardskill"></i>
                 </div>
               <li *ngFor="let hardskill of hardskills">
                   <div class="title-button">
                       <h5>{{hardskill.name}}</h5>
                       <div class="d-block">
-                        <span style="padding-right: 5px;"><i class="fa-solid fa-edit"></i></span>
-                        <span style="padding-right: 5px;"><i class="fa-solid fa-trash"></i></span>
+                        <span style="padding-right: 5px;"><i class="fa-solid fa-edit" routerLink="editarHardskill/{{hardskill.id}}"></i></span>
+                        <span style="padding-right: 5px;"><i class="fa-solid fa-trash" (click)="deleteHardskill(hardskill.id!)"></i></span>
                       </div>
                   </div>
                   <mat-progress-bar class="mb-2" [color]="color" [mode]="mode" [value]="hardskill.level" [bufferValue]="bufferValue" style="height:12px; border-radius: 4px;"></mat-progress-bar>

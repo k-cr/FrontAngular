@@ -27,5 +27,10 @@ export class HardskillService {
   public deleteHardskill(id: number): Observable<any>{
     return this.http.delete<any>(this.hardURL + `delete/${id}`);
   }
+
+  
+  public detailHardskill(id: number): Observable<Hardskill>{
+    return this.http.get<Hardskill>(this.hardURL + `detail/${id}`);
+  }
 }
 

@@ -37,6 +37,8 @@ import { EditarPersonComponent } from './person/editar-person/editar-person.comp
 import { EditSoftComponent } from './skills/edit-soft/edit-soft.component';
 import { EditHardComponent } from './skills/edit-hard/edit-hard.component';
 import { NuevaHardComponent } from './skills/nueva-hard/nueva-hard.component';
+import { NewProjectComponent } from './projects/new-project/new-project.component';
+import { EditProjectComponent } from './projects/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { NuevaHardComponent } from './skills/nueva-hard/nueva-hard.component';
     EditSoftComponent,
     EditHardComponent,
     NuevaHardComponent,
+    NewProjectComponent,
+    EditProjectComponent,
   ],
   imports: [
     BrowserModule,

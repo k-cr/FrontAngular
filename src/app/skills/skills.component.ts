@@ -6,6 +6,7 @@ import { Softskill } from '../models/softskill';
 import { HardskillService } from '../service/hardskill.service';
 import { SoftskillService } from '../service/softskill.service';
 import { TokenService } from '../service/token.service';
+import Alerta from 'sweetalert2';
 
 @Component({
   selector: 'app-skills',
@@ -17,24 +18,15 @@ export class SkillsComponent implements OnInit {
   hard?: Hardskill;
   softskills: Softskill[] = [];
   hardskills: Hardskill[] = [];
-  roles?: string[];
-  isAdmin = false;
 
   constructor(
     private softService: SoftskillService,
     private hardService: HardskillService,
-    private tokenService: TokenService
   ) { }
 
   ngOnInit(): void {
     this.listSoftskill();
     this.listHardskill();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(role => {
-      if(role === 'ROLE_ADMIN'){
-        this.isAdmin = true;
-      }
-    })
   }
 
   listSoftskill(): void {
@@ -59,6 +51,27 @@ export class SkillsComponent implements OnInit {
     )
   }
 
+  deleteHardskill(id: number) {
+    Alerta.fire({
+      title: '¿Seguro que querés eliminar este elemento?',
+      text: 'Los elementos eliminados no pueden recuperarse',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'No, no quiero eliminar',
+    }).then((result) => {
+      if(result.value) {
+        this.hardService.deleteHardskill(id).subscribe(
+          data => {
+          Alerta.fire('Removido', 'Elemento removido con éxito. Recarga la página', 'success')
+          console.log(data);
+          });
+          this.listHardskill();
+      } else if (result.dismiss === Alerta.DismissReason.cancel) {
+        Alerta.fire('Cancelado', 'Operación cancelada', 'error')
+      }
+    })
+  }
 
   color: ThemePalette = 'primary';
   mode: ProgressBarMode = 'determinate';

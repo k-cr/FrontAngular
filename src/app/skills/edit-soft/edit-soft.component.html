@@ -1,1 +1,21 @@
-<p>edit-soft works!</p>
+<app-navbar></app-navbar>
+<div class="container" *ngIf="soft">
+    <div class="row mt-3 border bg-white rounded-3">
+        <h2 class="p-2 m-4"><i class="fa-solid fa-pen-to-square"></i>Editar resumen de Softskills</h2>
+        <div class="col-md-8 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="col-md-12 form-group mb-2">
+                    <label for="about" class="mb-2"><b>Resumen de softskills</b></label>
+                    <textarea rows="3" class="form-control" id="about" name="about"
+                    [(ngModel)]="soft.information" required></textarea>
+                </div>
+                <div class="col-md-12 form-group mb-2 p-2">
+                    <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+                        <i class="fas fa-plus-circle"></i>Editar</button>
+                    <button class="btn btn-outline-primary btn-block m-2 " routerLink="/home">
+                        <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

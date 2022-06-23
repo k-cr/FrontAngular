@@ -7,6 +7,7 @@ import { EducationService } from '../service/education.service';
 import { ExperienceService } from '../service/experience.service';
 import { TokenService } from '../service/token.service';
 import Alerta from 'sweetalert2';
+import { AuthService } from '../service/auth.service';
 
 
 @Component({
@@ -26,17 +27,17 @@ export class EduExpComponent implements OnInit {
   educations: Education[] = [];
 
   roles?: string[];
-  isAdmin = false;
+  isAdmin?: boolean
 
   constructor(private expService: ExperienceService,
     private eduService: EducationService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private tokenService: TokenService) { }
+    private authService: AuthService,
+    private router: Router,) { }
 
   ngOnInit(): void {
     this.listExperiences();
     this.listEducation();
+    this.isAdmin = this.authService.getAdmin()
   }
 
   // Listar

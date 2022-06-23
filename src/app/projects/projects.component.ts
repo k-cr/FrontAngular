@@ -3,6 +3,7 @@ import { Project } from '../models/project';
 import { ProjectService } from '../service/project.service';
 import { TokenService } from '../service/token.service';
 import Alerta from 'sweetalert2';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-projects',
@@ -10,14 +11,16 @@ import Alerta from 'sweetalert2';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-
+  isAdmin?: boolean;
   projects: Project[] = [];
 
   constructor(private ProjectService: ProjectService,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService,
+    private authService: AuthService,) { }
 
   ngOnInit(): void {
     this.listProject();
+    this.isAdmin = this.authService.getAdmin()
   }
 
   listProject(): void {

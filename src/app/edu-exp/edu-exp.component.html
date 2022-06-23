@@ -4,7 +4,7 @@
     <div class="education">
       <div class="title-button">
         <h3 class="content-title">Educación</h3>
-        <i class="fa-solid fa-plus" routerLink='nuevaEducation'></i>
+        <i class="fa-solid fa-plus" *ngIf="isAdmin == true" routerLink='nuevaEducation'></i>
       </div>
       <div class="row">
         <div class="timeline-box">
@@ -19,8 +19,8 @@
               <div class="title-button">
                 <h5 class="timeline-title">{{education.degree}}</h5>
                 <div class="d-block">
-                  <span style="padding-right: 5px;"><i class="fa-solid fa-edit" (click)="editarEducacion(education.id!)"></i></span>
-                  <span style="padding-right: 5px;"><i class="fa-solid fa-trash" (click)="deleteEdu(education.id!)"></i></span>
+                  <span style="padding-right: 5px;"><i class="fa-solid fa-edit" *ngIf="isAdmin == true" (click)="editarEducacion(education.id!)"></i></span>
+                  <span style="padding-right: 5px;"><i class="fa-solid fa-trash" *ngIf="isAdmin == true" (click)="deleteEdu(education.id!)"></i></span>
                 </div>
               </div>
               <p class="timeline-text">{{education.otherInformation}}</p>
@@ -33,7 +33,7 @@
     <div class="experience">
       <div class="title-button">
         <h3 class="content-title">Experiencia laboral</h3>
-        <i class="fa-solid fa-plus" routerLink='nuevaExperiencia'></i>
+        <i class="fa-solid fa-plus" *ngIf="isAdmin == true" routerLink='nuevaExperiencia'></i>
       </div>
       <div class="row">
         <div class="timeline-box">
@@ -49,8 +49,8 @@
               <div class="title-button">
                 <h5 class="timeline-title">{{experience.ocupation}}</h5>
                 <div class="d-block">
-                  <span style="padding-right: 5px;"><i class="fa-solid fa-edit" (click)="editarExperiencia(experience.id!)"></i></span>
-                  <span style="padding-right: 5px;"><i class="fa-solid fa-trash" (click)="deleteExp(experience.id!)"></i></span>
+                  <span style="padding-right: 5px;"><i class="fa-solid fa-edit" *ngIf="isAdmin == true" (click)="editarExperiencia(experience.id!)"></i></span>
+                  <span style="padding-right: 5px;"><i class="fa-solid fa-trash" *ngIf="isAdmin == true" (click)="deleteExp(experience.id!)"></i></span>
                 </div>
               </div>
               <p class="timeline-text">{{experience.otherInformation}}</p>

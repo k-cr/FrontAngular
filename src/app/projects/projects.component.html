@@ -1,7 +1,7 @@
 <section class="mat-card card project mx-auto" id="projects">
     <div class="title-button">
       <h3 class="content-title">Proyectos</h3>
-      <i class="fa-solid fa-plus" routerLink="nuevoProyecto"></i>
+      <i class="fa-solid fa-plus" *ngIf="isAdmin == true" routerLink="nuevoProyecto"></i>
     </div>
     <div class="content">
       <li *ngFor="let projects of projects">
@@ -9,8 +9,8 @@
           <div style="padding: 5px;" class="title-button">
             <h5 class="card-title">{{projects.name}}</h5>
             <div class="d-block">
-              <span style="padding-right: 5px;"><i class="fa-solid fa-edit" routerLink="editarProyecto/{{projects.id}}"></i></span>
-              <span style="padding-right: 5px;"><i class="fa-solid fa-trash" (click)="deleteProject(projects.id!)"></i></span>
+              <span style="padding-right: 5px;"><i class="fa-solid fa-edit" *ngIf="isAdmin == true" routerLink="editarProyecto/{{projects.id}}"></i></span>
+              <span style="padding-right: 5px;"><i class="fa-solid fa-trash" *ngIf="isAdmin == true" (click)="deleteProject(projects.id!)"></i></span>
             </div>
           </div>
           <img mat-card-image src="{{projects.url_image}}" alt="Project Image">

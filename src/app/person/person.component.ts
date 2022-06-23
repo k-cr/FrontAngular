@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Person } from '../models/person';
+import { AuthService } from '../service/auth.service';
 import { PersonService } from '../service/person.service';
 import { TokenService } from '../service/token.service';
 
@@ -11,14 +12,17 @@ import { TokenService } from '../service/token.service';
 })
 export class PersonComponent implements OnInit {
 
+  isAdmin?: boolean;
   persons: Person[] = [];
 
   constructor(
     private PersonService: PersonService,
     private router: Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
+    this.isAdmin = this.authService.getAdmin()
     this.listPerson();
   }
 

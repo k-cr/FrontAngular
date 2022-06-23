@@ -7,6 +7,7 @@ import { HardskillService } from '../service/hardskill.service';
 import { SoftskillService } from '../service/softskill.service';
 import { TokenService } from '../service/token.service';
 import Alerta from 'sweetalert2';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-skills',
@@ -16,17 +17,20 @@ import Alerta from 'sweetalert2';
 export class SkillsComponent implements OnInit {
 
   hard?: Hardskill;
+  isAdmin?: boolean;
   softskills: Softskill[] = [];
   hardskills: Hardskill[] = [];
 
   constructor(
     private softService: SoftskillService,
     private hardService: HardskillService,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
     this.listSoftskill();
     this.listHardskill();
+    this.isAdmin = this.authService.getAdmin()
   }
 
   listSoftskill(): void {

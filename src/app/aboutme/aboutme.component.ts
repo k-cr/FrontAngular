@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Aboutme } from '../models/aboutme';
 import { AboutmeService } from '../service/aboutme.service';
+import { AuthService } from '../service/auth.service';
 import { TokenService } from '../service/token.service';
 
 @Component({
@@ -13,20 +14,15 @@ export class AboutmeComponent implements OnInit {
 
   abouts: Aboutme[] = [];
   roles?: string[];
-  isAdmin = false;
+  isAdmin?: boolean;
 
   constructor(private AboutmeService: AboutmeService,
-    private tokenService: TokenService,
+    private authService: AuthService,
     private router: Router,) { }
 
   ngOnInit(): void {
     this.listAbout();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(role => {
-      if(role === 'ROLE_ADMIN'){
-        this.isAdmin = true;
-      }
-    })
+    this.isAdmin = this.authService.getAdmin()
   }
 
   listAbout(): void {

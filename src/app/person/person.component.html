@@ -5,7 +5,7 @@
       <div class="info-about">
         <div class="img-about mb-3" id="profile-pfpEdit">
           <img src="{{person.url_pfp}}" id="profile-pfp">
-          <i class="fa-solid fa-pen-to-square" (click)="editarPerson(person.id!)"></i>
+          <i class="fa-solid fa-pen-to-square" *ngIf="isAdmin == true" (click)="editarPerson(person.id!)"></i>
         </div>
   
         <div class="mb-3" id="info-data">

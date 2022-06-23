@@ -9,6 +9,9 @@ import { JwtDto } from '../models/jwt-dto';
   providedIn: 'root'
 })
 export class AuthService {
+
+  isAdmin?: boolean = false
+
   authUrl = 'https://portfoliocristianramos.herokuapp.com/api/auth/'
   constructor(private httpClient: HttpClient) { }
 
@@ -18,5 +21,13 @@ export class AuthService {
 
   public login(loginUser: LoginUser): Observable<JwtDto> {
     return this.httpClient.post<JwtDto>(this.authUrl + 'login', loginUser);
+  }
+
+  setAdmin(admin: boolean) {
+    this.isAdmin = admin
+  }
+
+  getAdmin(): boolean {
+    return this.isAdmin!;
   }
 }

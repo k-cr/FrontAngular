@@ -35,10 +35,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-        if(this.username == 'ramoscristian' && this.password == 'k_cr2704'){
+        if(this.username == 'admin' && this.password == 'admin'){
           this.router.navigate(['/home'])
-          this.isLogged = true;
-          this.isLoginFail = false;
+          this.authService.setAdmin(true)
+        } else if (this.username == 'user' && this.password == 'user'){
+          this.router.navigate(['/home'])
+          this.authService.setAdmin(false)
         }
         else {
           window.location.reload();

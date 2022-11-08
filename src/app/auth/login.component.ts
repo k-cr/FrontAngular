@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-        if(this.username == 'admin' && this.password == 'admin'){
+        if(this.username == 'kcr' && this.password == 'kcr'){
           this.router.navigate(['/home'])
           this.authService.setAdmin(true)
         } else if (this.username == 'user' && this.password == 'user'){
